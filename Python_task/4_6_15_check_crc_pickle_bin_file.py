@@ -16,7 +16,7 @@ def csum(obj: (list | dict)):
     return [sum(_lst), max(_lst)*min(_lst)][isinstance(obj, list)]
 
 
-def result_item_and_csum(file_name: object, item: int):
+def result_item_and_csum(file_name: str, item: int):
     obj = extract_pickle_file(file_name)
 
     if item == csum(obj):
