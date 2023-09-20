@@ -1,3 +1,6 @@
+import sys
+
+
 class PasswordError(Exception):
     pass
 
@@ -14,7 +17,7 @@ class DigitError(PasswordError):
     pass
 
 
-def is_good_password(password):
+def is_good_password(password: str):
     try:
         password[8]
     except Exception:
@@ -29,3 +32,15 @@ def is_good_password(password):
     except Exception:
         raise DigitError
     return True
+
+
+passwords = [word.rstrip() for word in sys.stdin]
+
+for item in passwords:
+    try:
+        is_good_password(item)
+    except Exception as err:
+        print(type(err).__name__)
+    else:
+        print('Success!')
+        break
