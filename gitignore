@@ -1,1 +1,2 @@
-./Python_task/.vscode
+.vscode
+__pycache__
